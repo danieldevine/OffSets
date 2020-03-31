@@ -1,0 +1,51 @@
+:root {
+    --key_font: 'mrs-eaves-xl-serif-narrow', serif;
+
+    --title_font: 'mrs-eaves-xl-serif', serif;
+}
+
+//possible scales
+$goldenRatio: 1.61803398875;
+$perfectFourth: 1.333;
+$majorSecond: 1.125;
+
+$typeScale: $goldenRatio;
+
+@function typeScale($exponent) {
+    $value: 1;
+
+    @if $exponent > 0 {
+        @for $i from 1 through $exponent {
+            $value: $value * $typeScale;
+        }
+    } @else {
+        @for $i from $exponent to 0 {
+            $value: $value / $typeScale;
+        }
+    }
+
+    @return $value * .5rem;
+}
+
+$fontSize: 20px;
+$lineHeight: 1.5;
+
+@mixin base-typography {
+    font-family: var(--key_font);
+    font-weight: 400;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    font-style: normal;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+@mixin titleText {
+    font-family: var(--title_font);
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing: -3px;
+    line-height: 1.5
+}

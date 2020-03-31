@@ -1,0 +1,6 @@
+{
+    "parser": "json",
+    "useTabs": false,
+    "tabWidth": 4,
+    "semi": false
+}

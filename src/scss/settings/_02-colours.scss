@@ -1,0 +1,28 @@
+:root {
+    //brand
+    --aerogen_blue: #0077c8;
+    --aerogen_yellow: #ffd100;
+    --solo_blue: #41b6e6;
+    --quaternary_colour: #ffffff;
+    --ultra_green: #84bd00;
+    --pro_orange: #e35205;
+    --pharma_blue: #99c9e9;
+    --aerogen_grey: #262626;
+    --aerogen_silver: #edfcff;
+
+    //utility
+    --error_colour: #e14848;
+}
+
+@mixin gradientBackground() {
+    &:before {
+        content: "";
+        background-image: url("/wp-content/themes/aerogen/assets/images/motif-background.svg");
+        background-size: cover;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}
