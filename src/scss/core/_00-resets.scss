@@ -139,9 +139,11 @@ sup {
 a {
     color: inherit;
     outline: 0 !important;
+    text-decoration-color: var(--primary_colour);
 
     &:hover {
         text-decoration: none;
+        color: var(--primary_colour);
     }
 }
 

@@ -88,15 +88,15 @@ export default {
     }
 
     &__column {
-        border-right: 1px solid var(--aerogen_grey);
+        border-right: 1px solid #333333;
         opacity: 1;
         pointer-events: none;
         z-index: 1;
     }
 
     &__column_light {
-        border-right: 1px solid var(--quaternary_colour);
-        opacity: 0.1;
+        border-right: 0.056rem solid var(--quaternary_colour);
+        opacity: 0.05;
     }
 }
 </style>

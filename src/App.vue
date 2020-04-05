@@ -1,6 +1,8 @@
 <template>
     <div id="app" class="app">
-        <header>This is a header</header>
+        <header class="masthead">
+            <div class="masthead__title">SoundEye</div>
+        </header>
         <div class="app__inner">
             <sidebar></sidebar>
             <main class="main">
@@ -9,7 +11,9 @@
                 </div>
             </main>
         </div>
-        <footer>This is the footer</footer>
+        <footer>
+            <a href="https://github.com/danieldevine">Site by @coderjerk</a>
+        </footer>
         <grid></grid>
     </div>
 </template>
@@ -39,16 +43,35 @@ export default {
 }
 
 .main {
+    min-height: 90vh;
     &__inner {
-        margin-right: columnWidths(2);
+        margin-right: columnWidths(3);
+        padding-top: columnWidths(0.5);
     }
 }
 
 header {
-    background: var(--primary_colour);
+    background: var(--secondary_colour);
     font-family: var(--title_font);
     font-weight: 300;
+    font-size: typeScale(0);
+    padding: columnWidths(0.25) columnWidths(1);
+}
+
+.masthead {
+    &__title {
+        color: var(--quinary_colour);
+    }
+}
+
+footer {
     font-size: typeScale(-1);
-    text-transform: uppercase;
+    padding: columnWidths(2) columnWidths(1) columnWidths(0.5);
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+        text-decoration-color: var(--primary_colour);
+    }
 }
 </style>

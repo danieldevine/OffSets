@@ -42,8 +42,8 @@ $lineHeight: 1.5;
 }
 
 @mixin titleText {
-    font-family: var(--title_font);
-    font-weight: 300;
+    font-family: var(--key_font);
+    font-weight: 700;
     font-style: normal;
     line-height: $lineHeight;
 }
