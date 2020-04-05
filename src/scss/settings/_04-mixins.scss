@@ -138,7 +138,7 @@
  *
  **/
 @function columnWidths($columns) {
-    $cols: (100vw / 12) * $columns;
+    $cols: (100vw / 24) * $columns;
     @return $cols;
 }
 

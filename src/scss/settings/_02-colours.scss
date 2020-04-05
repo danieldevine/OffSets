@@ -1,28 +1,12 @@
 :root {
-    //brand
-    --aerogen_blue: #0077c8;
-    --aerogen_yellow: #ffd100;
-    --solo_blue: #41b6e6;
-    --quaternary_colour: #ffffff;
-    --ultra_green: #84bd00;
-    --pro_orange: #e35205;
-    --pharma_blue: #99c9e9;
-    --aerogen_grey: #262626;
-    --aerogen_silver: #edfcff;
+    //game
+    --base_colour: #141e2c;
+    --primary_colour: #2b899a;
+    --secondary_colour: #b5693a;
+    --tertiary_colour: #e6e5c5;
+    --quaternary_colour: #f7f1f1;
+    --quinary_colour: #21b588;
 
     //utility
     --error_colour: #e14848;
-}
-
-@mixin gradientBackground() {
-    &:before {
-        content: "";
-        background-image: url("/wp-content/themes/aerogen/assets/images/motif-background.svg");
-        background-size: cover;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-    }
 }

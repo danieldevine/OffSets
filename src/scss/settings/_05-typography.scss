@@ -1,7 +1,6 @@
 :root {
-    --key_font: 'mrs-eaves-xl-serif-narrow', serif;
-
-    --title_font: 'mrs-eaves-xl-serif', serif;
+    --key_font: "williams-caslon-text", serif;
+    --title_font: "laca-text", sans-serif;
 }
 
 //possible scales
@@ -9,7 +8,7 @@ $goldenRatio: 1.61803398875;
 $perfectFourth: 1.333;
 $majorSecond: 1.125;
 
-$typeScale: $goldenRatio;
+$typeScale: $perfectFourth;
 
 @function typeScale($exponent) {
     $value: 1;
@@ -24,7 +23,7 @@ $typeScale: $goldenRatio;
         }
     }
 
-    @return $value * .5rem;
+    @return $value * 1rem;
 }
 
 $fontSize: 20px;
@@ -44,8 +43,7 @@ $lineHeight: 1.5;
 
 @mixin titleText {
     font-family: var(--title_font);
-    font-weight: 800;
+    font-weight: 300;
     font-style: normal;
-    letter-spacing: -3px;
-    line-height: 1.5
+    line-height: $lineHeight;
 }

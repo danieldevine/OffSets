@@ -3,9 +3,7 @@
         <h2>Nodes</h2>
         <div class="nodes">
             <div class="node">
-                <div v-for="(node, index) in nodes" :key="index">
-                    {{ node.content }}
-                </div>
+                <div v-for="(node, index) in nodes" :key="index">{{ node.content }}</div>
             </div>
         </div>
     </div>

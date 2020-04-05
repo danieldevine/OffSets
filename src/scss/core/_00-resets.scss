@@ -135,3 +135,23 @@ sup {
     position: relative;
     top: -0.5rem;
 }
+
+a {
+    color: inherit;
+    outline: 0 !important;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
