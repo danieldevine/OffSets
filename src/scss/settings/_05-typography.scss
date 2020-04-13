@@ -8,7 +8,7 @@ $goldenRatio: 1.61803398875;
 $perfectFourth: 1.333;
 $majorSecond: 1.125;
 
-$typeScale: $perfectFourth;
+$typeScale: $majorSecond;
 
 @function typeScale($exponent) {
     $value: 1;
@@ -18,7 +18,7 @@ $typeScale: $perfectFourth;
             $value: $value * $typeScale;
         }
     } @else {
-        @for $i from $exponent to 0 {
+        @for $i from $exponent to 1 {
             $value: $value / $typeScale;
         }
     }
@@ -26,7 +26,9 @@ $typeScale: $perfectFourth;
     @return $value * 1rem;
 }
 
-$fontSize: 20px;
+
+
+$fontSize: 24px;
 $lineHeight: 1.5;
 
 @mixin base-typography {
