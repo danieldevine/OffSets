@@ -4,7 +4,7 @@
         <div class="nodes">
             <div class="node">
                 <div v-for="(node, index) in nodes" :key="index">
-                    <p v-html="node.content"></p>
+                    <router-link :to="`/node/${node.id}`">Node {{ node.id }}</router-link>
                 </div>
             </div>
         </div>
