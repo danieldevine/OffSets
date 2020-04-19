@@ -1,14 +1,15 @@
 :root {
     --key_font: "williams-caslon-text", serif;
-    --title_font: "laca-text", sans-serif;
+    --title_font: "williams-caslon-text", serif;
 }
 
 //possible scales
 $goldenRatio: 1.61803398875;
 $perfectFourth: 1.333;
 $majorSecond: 1.125;
+$majorThird: 1.25;
 
-$typeScale: $perfectFourth;
+$typeScale: $goldenRatio;
 
 @function typeScale($exponent) {
     $value: 1;
@@ -26,8 +27,12 @@ $typeScale: $perfectFourth;
     @return $value * 1rem;
 }
 
-$fontSize: 20px;
-$lineHeight: 1.5;
+@function baseLine($exponent) {
+    @return ($exponent * $typeScale) * 1rem;
+}
+
+$fontSize: 12px;
+$lineHeight: $typeScale;
 
 @mixin base-typography {
     font-family: var(--key_font);
@@ -35,15 +40,27 @@ $lineHeight: 1.5;
     font-size: $fontSize;
     line-height: $lineHeight;
     font-style: normal;
+    vertical-align: baseline;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 @mixin titleText {
-    font-family: var(--key_font);
-    font-weight: 700;
-    font-style: normal;
-    line-height: $lineHeight;
+    font-family: var(--title_font);
+    font-weight: 600;
+}
+
+//calculates line height in rems based on font size
+@mixin setFont($exponent: 1) {
+    $fs: typeScale($exponent);
+    font-size: $fs;
+    line-height: $fs * $typeScale;
+}
+
+p {
+    @include setFont(1);
 }
