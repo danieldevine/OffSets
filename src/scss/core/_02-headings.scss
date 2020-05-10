@@ -5,29 +5,35 @@ h4,
 h5,
 h6 {
     @include titleText();
+    margin-bottom: baseLine(1);
+    color: var(--primary_colour);
 }
 
 h1 {
-    @include setFont(4);
+    @include setFont(3);
+    font-family: var(--display_font);
+    font-weight: 300;
+    text-transform: uppercase;
+
 }
 
 h2 {
-    @include setFont(5);
+    @include setFont(4);
     color: var(--primary_colour);
 }
 
 h3 {
-    @include setFont(4);
-}
-
-h4 {
     @include setFont(3);
 }
 
-h5 {
+h4 {
     @include setFont(2);
 }
 
-h6 {
+h5 {
     @include setFont(1);
+}
+
+h6 {
+    @include setFont(-1);
 }

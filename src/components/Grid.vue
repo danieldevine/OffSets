@@ -1,10 +1,10 @@
 <template>
     <div :class="`grid grid--${shade} `">
-        <div :class="`grid__overlay grid__overlay_${overlay}`"></div>
+        <!-- <div :class="`grid__overlay grid__overlay_${overlay}`"></div> -->
         <div
             :class="`grid__column grid__column_${shade}`"
-            v-for="column in columns"
-            :key="column.id"
+            v-for="(column, index) in columns"
+            :key="index"
         ></div>
     </div>
 </template>
@@ -21,34 +21,9 @@ export default {
             default: "transparent"
         }
     },
-    data() {
-        return {
-            columns: [
-                "0",
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10",
-                "11",
-                "12",
-                "13",
-                "14",
-                "15",
-                "16",
-                "17",
-                "18",
-                "19",
-                "20",
-                "21",
-                "22",
-                "23"
-            ]
+    computed: {
+        columns() {
+            return new Array(23)
         }
     }
 }
@@ -68,17 +43,21 @@ export default {
     mix-blend-mode: exclusion;
 
     &__overlay {
+        content: "";
         position: absolute;
-        left: 0;
         top: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-    }
-
-    &__overlay_primary {
-        background: rgb(0, 0, 0);
-        opacity: 0.3;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        background: linear-gradient(
+            to bottom,
+            hsl(150, 4%, 16%),
+            hsl(150, 4%, 16%) 1px,
+            transparent 1px,
+            transparent
+        );
+        background-size: 100% baseLine(1);
     }
 
     &__overlay_secondary {
