@@ -17,6 +17,9 @@
                         <router-link to="/">Nodes</router-link>
                     </li>
                     <li>
+                        <router-link to="/rules">The Rules</router-link>
+                    </li>
+                    <li>
                         <router-link to="/players">Players</router-link>
                     </li>
                 </ul>

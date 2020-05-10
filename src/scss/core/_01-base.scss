@@ -64,8 +64,9 @@ li {
     margin-top: baseLine(1);
     @include setFont(-1);
     display: inline-flex;
-    padding: .5rem;
+    padding: baseLine(1) / 2 baseLine(1);
     background-color: var(--primary_colour);
+    font-weight: 600;
 
     &:hover {
         color: var(--base_colour);
