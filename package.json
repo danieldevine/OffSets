@@ -11,6 +11,7 @@
     "core-js": "^3.6.4",
     "d3-force": "^2.0.1",
     "register-service-worker": "^1.6.2",
+    "tiptap": "^1.27.0",
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
     "vue-d3-network": "^0.1.28",

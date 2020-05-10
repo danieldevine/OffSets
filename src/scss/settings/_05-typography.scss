@@ -1,14 +1,20 @@
 :root {
-    --key_font: "williams-caslon-text", serif;
-    --title_font: "laca-text", sans-serif;
+    --key_font: "le-monde-livre-classic-byol", serif;
+    --title_font: "farm-new", sans-serif;
+    --display_font: "politica-condensed", sans-serif;
 }
+
+    $key_font: "le-monde-livre-classic-byol", serif;
+    $title_font: "farm-new", sans-serif;
+    $display_font: "politica-condensed", sans-serif;
 
 //possible scales
 $goldenRatio: 1.61803398875;
 $perfectFourth: 1.333;
 $majorSecond: 1.125;
+$majorThird: 1.25;
 
-$typeScale: $majorSecond;
+$typeScale: $majorThird;
 
 @function typeScale($exponent) {
     $value: 1;
@@ -18,7 +24,7 @@ $typeScale: $majorSecond;
             $value: $value * $typeScale;
         }
     } @else {
-        @for $i from $exponent to 1 {
+        @for $i from $exponent to 0 {
             $value: $value / $typeScale;
         }
     }
@@ -26,26 +32,42 @@ $typeScale: $majorSecond;
     @return $value * 1rem;
 }
 
+@function baseLine($exponent) {
+    @return ($exponent * $typeScale) * 1rem;
+}
 
-
-$fontSize: 24px;
-$lineHeight: 1.5;
+$fontSize: 18px;
+$lineHeight: $typeScale;
 
 @mixin base-typography {
-    font-family: var(--key_font);
-    font-weight: 400;
+    font-family: $key_font;
+    font-weight: 300;
     font-size: $fontSize;
     line-height: $lineHeight;
     font-style: normal;
+    vertical-align: baseline;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 @mixin titleText {
-    font-family: var(--key_font);
-    font-weight: 700;
-    font-style: normal;
-    line-height: $lineHeight;
+    font-weight: 300;
+    font-family: var(--title_font);
+    text-transform: uppercase;
+}
+
+//calculates line height in rems based on font size
+@mixin setFont($exponent: 1) {
+    $fs: typeScale($exponent);
+    font-size: $fs;
+    line-height: $fs * $typeScale;
+}
+
+p {
+    @include setFont(1);
+    font-weight: 300;
 }

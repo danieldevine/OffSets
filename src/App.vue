@@ -1,8 +1,5 @@
 <template>
     <div id="app" class="app">
-        <header class="masthead">
-            <div class="masthead__title">SoundEye</div>
-        </header>
         <div class="app__inner">
             <sidebar></sidebar>
             <main class="main">
@@ -10,10 +7,8 @@
                     <router-view />
                 </div>
             </main>
+            <div></div>
         </div>
-        <footer>
-            <a href="https://github.com/danieldevine">Site by @coderjerk</a>
-        </footer>
         <grid></grid>
     </div>
 </template>
@@ -37,22 +32,31 @@ export default {
 
 .app {
     &__inner {
+        min-height: 100vh;
         @include gridBlock();
-        grid-template-columns: 5fr 19fr;
+        grid-template-columns: columnWidths(4) columnWidths(16) columnWidths(4);
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
     }
 }
 
 .main {
     min-height: 90vh;
     &__inner {
-        margin-right: columnWidths(3);
-        padding-top: columnWidths(0.5);
+        margin-left: columnWidths(2);
+        padding-top: baseLine(2);
+        max-width: columnWidths(12);
+
+        @include mobile {
+            max-width: columnWidths(20);
+        }
     }
 }
 
 header {
     background: var(--secondary_colour);
-    font-family: var(--title_font);
     font-weight: 300;
     font-size: typeScale(0);
     padding: columnWidths(0.25) columnWidths(1);
@@ -61,17 +65,6 @@ header {
 .masthead {
     &__title {
         color: var(--quinary_colour);
-    }
-}
-
-footer {
-    font-size: typeScale(-1);
-    padding: columnWidths(2) columnWidths(1) columnWidths(0.5);
-    display: flex;
-    justify-content: flex-end;
-
-    a {
-        text-decoration-color: var(--primary_colour);
     }
 }
 </style>

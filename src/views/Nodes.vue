@@ -1,15 +1,11 @@
 <template>
     <div>
         <h2>Nodes</h2>
-        <div class="nodes">
-            <div class="node">
-                <div v-for="(node, index) in nodes" :key="index">
-                    <router-link :to="`/node/${node.id}`"
-                        >Node {{ node.id }}
-                    </router-link>
-                </div>
-            </div>
-        </div>
+        <ul class="nodes">
+            <li v-for="(node, index) in nodes" :key="index">
+                <router-link :to="`/node/${node.id}`">Node {{ node.id }}</router-link>
+            </li>
+        </ul>
     </div>
 </template>
 
