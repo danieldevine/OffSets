@@ -89,7 +89,7 @@ nav {
         a {
             @include titleText;
             text-transform: uppercase;
-            @include setFont(-1);
+            @include setFont(0);
         }
     }
 }

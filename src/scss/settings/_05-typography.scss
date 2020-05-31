@@ -69,5 +69,7 @@ $lineHeight: $typeScale;
 
 p {
     @include setFont(1);
+    line-height: 1.56;
     font-weight: 300;
+    margin-bottom: baseLine(1);
 }
